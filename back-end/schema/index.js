@@ -1,40 +1,8 @@
 const { buildSchema } = require("graphql");
+const fs = require("fs");
+const path = require("path")
 
-const schema = buildSchema(`
-  type Query {
-    movies : [Movie]!
-  }
-  type Mutation {
-    createUser(username: String, password: String): User!
-    login(username: String, password: String): User!
-  }
-  type Movie {
-    scoutbase_rating: String
-    title: String!
-    year: Int!
-    rating: Int!
-    actors: [Actor]
-  }
-  type Actor {
-    name: String!
-    birthday: String!
-    country: String!
-    directors: [Director]
-  }
-  type Director {
-    name: String!
-    birthday: String!
-    country: String!
-  }
-  type User {
-    token: String
-    user : UserDetail
-  }
-  type UserDetail {
-    name: String!
-    password: String!
-    id: String!
-  }
-`);
+const schemaDefinition = fs.readFileSync(path.join(__dirname,'schema.graphql'),"utf-8");
+const schema = buildSchema(schemaDefinition);
 
 module.exports = schema;
