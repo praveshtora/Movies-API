@@ -27,10 +27,13 @@ const schema = buildSchema(`
     country: String!
   }
   type User {
-    username: String!
-    password: String
-    id: String
     token: String
+    user : UserDetail
+  }
+  type UserDetail {
+    name: String!
+    password: String!
+    id: String!
   }
 `);
 
