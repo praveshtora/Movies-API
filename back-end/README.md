@@ -1,5 +1,11 @@
 # Back-end task of Code Challenge for Scoutbase
 
+# How to run the project
+  1. Clone the project.
+  2. Create a database in mongo called movies-db by command 'use movies-db'.
+  3. npm install
+  4. node app.js
+
 This task is for demonstrating your understanding of HTTP, GraphQL, Node.js and general API practices.
 
 Instructions:
